@@ -47,7 +47,7 @@ class App {
 	}
 
 	_setupModel() {
-		const geometry = new THREE.PlaneGeometry();
+		const geometry = new THREE.TorusGeometry(0.9, 0.4, 32, 32, Math.PI);
 		const fillMaterial = new THREE.MeshPhongMaterial({ color: 0x515151 }); // 회색
 		const cube = new THREE.Mesh(geometry, fillMaterial); // 회색 실린더의 메쉬타입 오브젝트 생성
 
