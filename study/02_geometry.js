@@ -47,7 +47,7 @@ class App {
 	}
 
 	_setupModel() {
-		const geometry = new THREE.CircleGeometry(0.9, 16, Math.PI / 2, Math.PI); // 반지름, 세그먼트, 시작각도, 연장각도
+		const geometry = new THREE.ConeGeometry(0.5, 0.5, 16, 5, true, 0, Math.PI); // 밑면 반지름, 원뿔의 높이, width 세그먼트 수, height 세그먼트 수, 높이  밑면 오픈 여부, 시작각도, 연장각도
 		const fillMaterial = new THREE.MeshPhongMaterial({ color: 0x515151 }); // 회색
 		const cube = new THREE.Mesh(geometry, fillMaterial); // 회색 원판의 메쉬타입 오브젝트 생성
 
