@@ -47,9 +47,9 @@ class App {
 	}
 
 	_setupModel() {
-		const geometry = new THREE.BoxGeometry(1, 1, 1, 2, 2, 2); // 세그먼트 수 추가
+		const geometry = new THREE.CircleGeometry(0.9, 16, Math.PI / 2, Math.PI); // 반지름, 세그먼트, 시작각도, 연장각도
 		const fillMaterial = new THREE.MeshPhongMaterial({ color: 0x515151 }); // 회색
-		const cube = new THREE.Mesh(geometry, fillMaterial); // 회색 정육면체의 메쉬타입 오브젝트 생성
+		const cube = new THREE.Mesh(geometry, fillMaterial); // 회색 원판의 메쉬타입 오브젝트 생성
 
 		const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffff00 }); // 노란색 윤곽선 마테리얼 오브젝트
 		const line = new THREE.LineSegments(
