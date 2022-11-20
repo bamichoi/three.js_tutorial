@@ -47,15 +47,24 @@ class App {
 	}
 
 	_setupModel() {
-		const geometry = new THREE.ConeGeometry(0.5, 0.5, 16, 5, true, 0, Math.PI); // 밑면 반지름, 원뿔의 높이, width 세그먼트 수, height 세그먼트 수, 높이  밑면 오픈 여부, 시작각도, 연장각도
+		const geometry = new THREE.CylinderGeometry(
+			0.7,
+			0.9,
+			1,
+			32,
+			2,
+			true,
+			0,
+			Math.PI
+		);
 		const fillMaterial = new THREE.MeshPhongMaterial({ color: 0x515151 }); // 회색
-		const cube = new THREE.Mesh(geometry, fillMaterial); // 회색 원판의 메쉬타입 오브젝트 생성
+		const cube = new THREE.Mesh(geometry, fillMaterial); // 회색 실린더의 메쉬타입 오브젝트 생성
 
 		const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffff00 }); // 노란색 윤곽선 마테리얼 오브젝트
 		const line = new THREE.LineSegments(
 			new THREE.WireframeGeometry(geometry),
 			lineMaterial
-		); // 정육면체 지오메트리를 와이어프레임형태로 지오메트리 표현한 오브젝트오ㅘ 노란색 라인 마테리얼 오브젝트로 라인타입 오브젝트 생성
+		);
 
 		const group = new THREE.Group(); // 메쉬 오브젝트와 라인오브젝트를 하나의 오브젝트로 다룸
 		group.add(cube);
